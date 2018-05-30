@@ -1,0 +1,11 @@
+- hosts: db
+  remote_user: root
+
+  roles:
+    - { role: java_git_comm, tags: [ 'update_pre', 'pkbuild', 'git' ] }
+    - { role: java_create_tar_comm, tags: [ 'update_pre', 'pkbuild', 'git', 'create_tar'] }
+- hosts: db
+  remote_user: root
+
+  roles:
+    - { role: java_updatefile_comm, tags: [ 'update_pre', 'updatefile' ] }
